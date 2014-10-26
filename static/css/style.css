@@ -1,0 +1,84 @@
+::-webkit-scrollbar-thumb:vertical{height:10px;background-color:#ccc;}
+::-webkit-scrollbar{width:15px;height:5px;background:#FFF;margin-right:15px;}
+::selection {color: #fff;background-color: #666;text-shadow: none;}
+::-moz-selection {color: #fff; background-color: #666; text-shadow: none;}
+
+input{ height:30px; padding: 2px 5px; margin:5px 10px; border: 1px solid #ccc; background-color: #fff; -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075); box-shadow: inset 0 1px 1px rgba(0,0,0,.075); -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s; -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; background-image: none; float: left;}
+input:focus{ border-color: #66afe9; outline: 0; -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6); box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6); }
+.btn {display: inline-block; padding: 6px 12px; margin: 0 0px 0px 10px; font-size: 14px; font-weight: 400; line-height: 1.42857143; text-align: center; white-space: nowrap; vertical-align: middle; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; background-image: none; border: 1px solid transparent; }
+.btn:focus,.btn:active:focus,.btn.active:focus { outline: thin dotted; outline: 5px auto -webkit-focus-ring-color; outline-offset: -2px}
+.btn:hover,.btn:focus { color: #333; text-decoration: none}
+.btn:active,.btn.active { background-image: none; outline: 0; -webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,.125); box-shadow: inset 0 3px 5px rgba(0,0,0,.125)}
+.btn.disabled,.btn[disabled],fieldset[disabled] .btn { pointer-events: none; cursor: not-allowed; filter: alpha(opacity=65); -webkit-box-shadow: none; box-shadow: none; opacity: .65}
+.btn-default { color: #333; background-color: #fff; border-color: #ccc}
+.btn-default:hover,.btn-default:focus,.btn-default:active,.btn-default.active,.open>.dropdown-toggle.btn-default { color: #333; background-color: #e6e6e6; border-color: #adadad}
+.btn-default:active,.btn-default.active,.open>.dropdown-toggle.btn-default { background-image: none}
+.btn-default.disabled,.btn-default[disabled],fieldset[disabled] .btn-default,.btn-default.disabled:hover,.btn-default[disabled]:hover,fieldset[disabled] .btn-default:hover,.btn-default.disabled:focus,.btn-default[disabled]:focus,fieldset[disabled] .btn-default:focus,.btn-default.disabled:active,.btn-default[disabled]:active,fieldset[disabled] .btn-default:active,.btn-default.disabled.active,.btn-default[disabled].active,fieldset[disabled] .btn-default.active { background-color: #fff; border-color: #ccc}
+.fade { opacity: 0; -webkit-transition: opacity .15s linear; -o-transition: opacity .15s linear; transition: opacity .15s linear}
+.fade.in { opacity: 1}
+.btn-second{border-color:#ccc;color:#444;background-color:#efefef;}
+a.btn{text-decoration: none;}
+html, body{
+	background:#E2E2E2;;
+}
+.container{
+	max-width:960px;
+	height:auto;
+	margin:0 auto;
+}
+.form_label{
+	vertical-align: middle;
+	text-align: right;
+	line-height: 34px;
+	width: 145px;
+	font-size: 1.1em;
+}
+.form_input .x{
+	width:150px;
+}
+.form_input .xl{
+	width:300px;
+}
+.form_input .xs{
+	width:100px;
+}
+.form_tips{
+	padding: 0px 10px;
+	color: #aaa;
+	font-size:0.9em;
+}
+.error_input{
+	border-color:#D9534F;
+	outline: 0;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(217, 83, 79,.6);
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(217, 83, 79,.6);
+}
+.error_tips{
+	color:#D9534F;
+	text-shadow: 0 0 0.5px #D9534F;
+	-webkit-text-shadow: 0 0 3px #D9534F;
+}
+.form_vcode{
+	height:30px;
+	padding: 2px 5px;
+	margin:5px 10px;
+	display: block;
+}
+.brand_box{
+	max-width:270px;
+	height: 130px;
+	margin:0 auto;
+	margin-top:10px;
+	background: url('http://su.bdimg.com/static/superplus/img/logo_white.png') center bottom no-repeat;
+	background-size: contain;
+}
+.user_box{
+	width:500px;
+	margin:0 auto;
+	padding:40px 10px;
+	border: 1px solid #D0D0D0;
+	-webkit-box-shadow: 0 0 8px #D0D0D0;
+	background: #efefef;
+}
+.user_box input{
+}
