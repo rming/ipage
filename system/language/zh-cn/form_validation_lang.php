@@ -11,13 +11,14 @@ $lang['max_length']			= "%s 不能超过 %s 个字。";
 $lang['exact_length']		= "%s 必须刚好 %s 个字。";
 $lang['alpha']				= "%s 只能包含英文字母。";
 $lang['alpha_numeric']		= "%s 只能包含英文字母或数字。";
+$lang['alpha_sub_domain']   = "%s 只能包含英文字母、数字、或破折号。";
 $lang['alpha_dash']			= "%s 只能包含英文字母、数字、下划线、或破折号。";
 $lang['numeric']			= "%s 只能包含数字。";
 $lang['is_numeric']			= "%s 只能包含数字。";
 $lang['integer']			= "%s 只能包含整数。";
 $lang['regex_match']		= "%s 格式不正确。";
 $lang['matches']			= "%s 与 %s 不相符合。";
-$lang['is_unique'] 			= "%s 必须唯一。当前值已存在。";
+$lang['is_unique'] 			= "%s 已经被占用。";
 $lang['is_natural']			= "%s 必须是自然数(非负整数)。";
 $lang['is_natural_no_zero']	= "%s 必须是大于零的自然数(非负整数)。";
 //2.1.0

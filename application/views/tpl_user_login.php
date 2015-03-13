@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>用户注册</title>
-    <link rel="stylesheet" type="text/css" href="<?=base_url('static/css/typo.css')?>">
-    <link rel="stylesheet" type="text/css" href="<?=base_url('static/css/style.css')?>">
-    <link rel="stylesheet" type="text/css" href="<?=base_url('static/sco/css/sco.message.css')?>">
-</head>
-<body>
 <div class="container">
     <div class="brand_box">
+        <a href="/"></a>
     </div>
-    <div class="user_box">
+    <div class="box user_box">
         <form action="" method="post">
         <table cellpadding="5" cellspacing="0" border="0" width="100%">
             <tbody>
@@ -22,7 +14,7 @@
             </tr>
             <tr>
                 <td></td>
-                <td class="form_tips" id="username">请使用半角的 a-z 或数字 0-9</td>
+                <td class="form_tips" id="username"></td>
             </tr>
             <tr>
                 <td class="form_label">密码</td>
@@ -52,6 +44,8 @@
                 <td >
                     <button type="button" class="btn btn-default form_submit" >登陆</button>
                     <a  class="btn btn-default btn-second"  href="<?=site_url('user/signup');?>">注册</a>
+
+                    <a class="forgotpassword" href="<?=site_url('user/password/fogot');?>">忘记密码？</a>
                 </td>
             </tr>
         </tbody>
@@ -59,8 +53,7 @@
         </form>
     </div>
 </div>
-<script type="text/javascript" src="<?=base_url('static/js/jquery-1.11.1.min.js')?>"></script>
-<script type="text/javascript" src="<?=base_url('static/sco/js/sco.message.js')?>"></script>
+
 <script type="text/javascript">
     $('.form_submit').click(function(e) {
         var current_form = $(this).parents().find('form');
@@ -78,7 +71,7 @@
                         error_input[0].focus();
                     }
                 }else{
-                    var success = "success~~";
+                    var success = "登陆成功！";
                     $.scojs_message(success, $.scojs_message.TYPE_OK);
                     setTimeout('redirectNext()',2000);
                 }
@@ -101,7 +94,33 @@
             }
         });
     }
-    var redirectNext = function(){window.location.href = "http://m.baidu.com";}
+    var redirectNext = function(){window.location = 'http://' + window.location.host + '/admin/';}
+
+    $('[name="password"]').keypress(function(event){
+        var e = event||window.event;
+        var o = e.target||e.srcElement;
+        var keyCode  =  e.keyCode||e.which;
+        var isShift  =  e.shiftKey ||(keyCode  ==   16 ) || false ;
+         if (
+         ((keyCode >=   65   &&  keyCode  <=   90 )  &&   !isShift)
+         || ((keyCode >=   97   &&  keyCode  <=   122 )  &&  isShift)
+         ){
+             o.style.background ='#FFF URL(<?=base_url("static/images/capslock.png");?>) right center no-repeat';
+         }
+         else{o.style.backgroundImage  =  'none';}
+    });
+
+    $('[name="password"]').blur(function(event){
+         var e = event||window.event;
+         var o = e.target||e.srcElement;
+         o.style.backgroundImage  =  'none';
+    });
 </script>
-</body>
-</html>
+<script type="text/javascript">
+    $('input').keydown(function(event) {
+        var keyCode = event.which;
+            if (keyCode == 13){
+                $('.form_submit').click();
+            }
+    });
+</script>

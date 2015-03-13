@@ -937,7 +937,7 @@ class CI_Form_validation {
 
 		return ($str !== $field) ? FALSE : TRUE;
 	}
-	
+
 	// --------------------------------------------------------------------
 
 	/**
@@ -952,7 +952,7 @@ class CI_Form_validation {
 	{
 		list($table, $field)=explode('.', $field);
 		$query = $this->CI->db->limit(1)->get_where($table, array($field => $str));
-		
+
 		return $query->num_rows() === 0;
     }
 
@@ -1129,6 +1129,10 @@ class CI_Form_validation {
 		return ( ! preg_match("/^([-a-z0-9_-])+$/i", $str)) ? FALSE : TRUE;
 	}
 
+	public function alpha_sub_domain($str)
+	{
+		return ( ! preg_match("/^([-a-z0-9-])+$/i", $str)) ? FALSE : TRUE;
+	}
 	// --------------------------------------------------------------------
 
 	/**

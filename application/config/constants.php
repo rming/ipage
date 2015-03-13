@@ -37,5 +37,26 @@ define('FOPEN_WRITE_CREATE_STRICT',				'xb');
 define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
 
+
+define('DOMAIN_TYPE_DOMAIN',		1);
+define('DOMAIN_TYPE_PAGE',		    2);
+
+define('USER_GROUP_ADMIN',		    99);
+define('USER_GROUP_ADVANCED',		51);
+define('USER_GROUP_NORMAL',		    11);
+define('USER_GROUP_FRESH',		    1);
+
+define('DOMAIN_RESOLVE_TYPE_A',		    1);
+define('DOMAIN_RESOLVE_TYPE_CNAME',		2);
+define('DOMAIN_RESOLVE_TYPE_URL',		3);
+
+define('DOMAIN_RESOLVE_ACTION_DELETE',  0);
+define('DOMAIN_RESOLVE_ACTION_ADD',	    1);
+define('DOMAIN_RESOLVE_ACTION_EDIT',	2);
+
+define('DOMAIN_RESOLVE_STATUS_PENDING',  0);
+define('DOMAIN_RESOLVE_STATUS_DONE',	 1);
+
+
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

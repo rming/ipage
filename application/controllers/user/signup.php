@@ -1,13 +1,17 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class signup extends CI_Controller {
+class signup extends MY_Controller {
 
 	public function __construct(){
-		parent::__construct();
+		parent::__construct(false);
 		$this->load->model('user_model');
 	}
 
 	public function index(){
+		//已经登陆状态 ， 跳转到首页
+		if($this->get_login_user()){
+			redirect('/admin/');
+		}
 
 		$this->form_validation->set_rules('username',  '用户名',    'required|trim|strip_tags|min_length[4]|max_length[32]|strtolower|is_unique[user.username]');
 		$this->form_validation->set_rules('password',  '密码',      'required|trim|strip_tags');
@@ -27,6 +31,19 @@ class signup extends CI_Controller {
 				'password' => $password,
 			);
 			$user = $this->user_model->save($data);
+			if($user){
+				//set login_user cookie
+	            $token = $this->user_model->gen_token($user);
+	            $cookie = array (
+	                'name'     => 'user_token',
+	                'expire'   => 0,
+	                'value'    => $token,
+	                'domain'   => DOMAIN,
+	                'path'     => '/',
+	                //'secure'   => TRUE
+	            );
+	            $this->input->set_cookie($cookie);
+			}
 			json_ret('0',array());
 		}else{
 			$error = array(
@@ -39,9 +56,11 @@ class signup extends CI_Controller {
 			json_ret('1',$error);
 		}
 
-
-		$data = array();
-		$this->load->view('tpl_user_signup',$data);
+		$data = array(
+			'title' => '用户注册',
+			'tpl'   => 'tpl_user_signup',
+		);
+		$this->load->view('tpl_layout',$data);
 	}
 
 	function vcode_check($str){
